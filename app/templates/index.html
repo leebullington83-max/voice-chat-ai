@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,12 +17,12 @@
             .container {
                 padding: 5px;
             }
-            
+
             header {
                 flex-direction: column;
                 padding: 10px 5px;
             }
-            
+
             .header-controls {
                 margin-top: 10px;
                 width: 100%;
@@ -29,41 +30,44 @@
                 display: flex;
                 flex-direction: row;
             }
-            
+
             .header-controls .button-group {
                 display: flex;
                 gap: 10px;
                 margin-left: 10px;
             }
-            
+
             .header-controls .main-nav {
                 margin-left: 0;
                 margin-right: 5px;
             }
         }
-        
+
         /* Small phone styles */
         @media (max-width: 480px) {
             body {
                 font-size: 14px;
             }
-            
+
             h1 {
                 font-size: 1.3rem;
             }
-            
+
             .container {
                 padding: 5px;
             }
         }
+
         .header-controls #theme-toggle {
             margin-top: 12px;
         }
+
         .header-controls #download-button {
             margin-top: 12px;
         }
     </style>
 </head>
+
 <body class="dark-mode">
     <header>
         <h1>
@@ -73,12 +77,17 @@
         <div class="header-controls">
             <div class="button-group">
                 <button id="theme-toggle" aria-label="Toggle dark/light mode">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-moon">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-                <button id="download-button" aria-label="Download conversation history" title="Download conversation history">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download">
+                <button id="download-button" aria-label="Download conversation history"
+                    title="Download conversation history">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-download">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -90,6 +99,7 @@
                     <li><a href="/" class="active">Dashboard</a></li>
                     <li><a href="/enhanced">Enhanced</a></li>
                     <li><a href="/webrtc_realtime">Realtime</a></li>
+                    <li><a href="/avatar">3D Avatar</a></li>
                 </ul>
             </nav>
         </div>
@@ -223,7 +233,7 @@
     </footer>
     <script src="/app/static/js/scripts.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Characters are already loaded by scripts.js
             // We only need to set the value here
             setTimeout(() => {
@@ -254,7 +264,7 @@
             document.getElementById('openai-model-select').value = "{{ openai_model }}";
             document.getElementById('ollama-model-select').value = "{{ ollama_model }}";
             document.getElementById('voice-speed-select').value = "{{ voice_speed }}";
-            
+
             // Set Kokoro voice value
             setTimeout(() => {
                 const kokoroVoiceSelect = document.getElementById('kokoro-voice-select');
@@ -265,4 +275,5 @@
         });
     </script>
 </body>
+
 </html>

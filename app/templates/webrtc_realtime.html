@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,23 +18,24 @@
             margin: 15px 0;
             gap: 6px;
         }
-        
+
         .voice-bar {
             width: 6px;
-            height: 5px; /* Default height when not active */
+            height: 5px;
+            /* Default height when not active */
             background-color: #555;
             border-radius: 3px;
             transition: height 0.1s ease;
         }
-        
+
         .active-bar {
             background-color: #00cc66;
         }
-        
+
         .hidden {
             display: none;
         }
-        
+
         /* Make sure the voice-visualization containers are pre-populated with bars */
         #userVoiceVisualization:empty::before,
         #aiVoiceVisualization:empty::before {
@@ -44,7 +46,7 @@
             background-color: rgba(0, 0, 0, 0.1);
             border-radius: 5px;
         }
-        
+
         /* Transcript styles */
         .transcript-container {
             height: 300px;
@@ -56,7 +58,7 @@
             margin-bottom: 20px;
             text-align: left;
         }
-        
+
         .system-message {
             color: #888;
             font-style: italic;
@@ -64,7 +66,7 @@
             font-size: 0.9rem;
             text-align: left;
         }
-        
+
         .error-message {
             color: #ff5555;
             margin: 8px 0;
@@ -72,7 +74,7 @@
             font-size: 0.9rem;
             text-align: left;
         }
-        
+
         .user-speech {
             color: #55aaff;
             margin: 10px 0;
@@ -81,7 +83,7 @@
             border-bottom: 1px solid #333;
             text-align: left;
         }
-        
+
         .ai-speech {
             color: #55ff55;
             margin: 10px 0;
@@ -90,13 +92,13 @@
             border-bottom: 1px solid #333;
             text-align: left;
         }
-        
+
         /* Microphone button styles */
         .mic-button-container {
             text-align: center;
             margin: 25px 0;
         }
-        
+
         .mic-button {
             width: 120px;
             height: 120px;
@@ -111,13 +113,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .mic-button.listening {
             background-color: #e74c3c;
             transform: scale(1.1);
             box-shadow: 0 0 20px rgba(231, 76, 60, 0.6);
         }
-        
+
         /* Status badge styling */
         .badge {
             display: inline-block;
@@ -131,27 +133,27 @@
             border-radius: 0.25rem;
             margin-left: 5px;
         }
-        
+
         .badge-secondary {
             background-color: #6c757d;
             color: #fff;
         }
-        
+
         .badge-success {
             background-color: #28a745;
             color: #fff;
         }
-        
+
         .badge-warning {
             background-color: #ffc107;
             color: #212529;
         }
-        
+
         .badge-danger {
             background-color: #dc3545;
             color: #fff;
         }
-        
+
         /* Status container */
         .status-container {
             margin: 15px 0;
@@ -160,7 +162,7 @@
             border-radius: 5px;
             text-align: center;
         }
-        
+
         /* Dots style */
         .dots {
             display: flex;
@@ -168,33 +170,33 @@
             margin: 20px 0;
             gap: 10px;
         }
-        
+
         .dot {
             font-size: 20px;
             color: #555;
         }
-        
+
         /* Dark mode styles */
         body.dark-mode {
             background-color: #121212;
             color: #fff;
         }
-        
+
         body.dark-mode .transcript-container {
             background-color: #1a1a1a;
             border-color: #333;
         }
-        
+
         body.dark-mode .btn {
             background-color: #333;
             color: #fff;
             border-color: #444;
         }
-        
+
         body.dark-mode .btn:hover {
             background-color: #444;
         }
-        
+
         /* Additional styles for better layout */
         .container {
             width: 100%;
@@ -204,7 +206,7 @@
             box-sizing: border-box;
             overflow-x: hidden;
         }
-        
+
         .controls-row {
             display: flex;
             gap: 10px;
@@ -212,7 +214,7 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-        
+
         .controls-row button {
             flex: 0 1 auto;
             min-width: 160px;
@@ -226,7 +228,7 @@
             flex-direction: column;
             align-items: center;
         }
-        
+
         .form-group {
             margin-bottom: 15px;
             display: flex;
@@ -235,12 +237,12 @@
             width: 300px;
             max-width: 100%;
         }
-        
+
         .form-group label {
             margin-bottom: 8px;
             font-weight: bold;
         }
-        
+
         .form-group select {
             padding: 8px;
             border-radius: 4px;
@@ -249,34 +251,36 @@
             border: 1px solid #444;
             width: 100%;
         }
-        
+
         /* Center the instructional text */
-        .container > p {
+        .container>p {
             text-align: center;
         }
-        
+
         /* Make everything more responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 5px;
                 width: 100%;
             }
-            
+
             .controls-row {
                 flex-direction: column;
                 gap: 5px;
             }
-            
+
             .controls-row button {
                 width: 100%;
             }
-            
+
             .mic-button {
                 width: 90px;
                 height: 90px;
             }
 
-            h1, h2, h3 {
+            h1,
+            h2,
+            h3 {
                 font-size: 1.2rem;
                 margin: 10px 0;
             }
@@ -296,44 +300,46 @@
                 padding: 5px 8px;
                 font-size: 0.9rem;
             }
-            
+
             .form-group select {
                 width: 100% !important;
                 max-width: 100% !important;
             }
         }
-        
+
         /* Small phone styles */
         @media (max-width: 480px) {
             body {
                 font-size: 14px;
             }
-            
+
             .container {
                 padding: 5px;
             }
-            
-            h1, h2, h3 {
+
+            h1,
+            h2,
+            h3 {
                 font-size: 1rem;
             }
-            
+
             .status-container {
                 padding: 5px;
                 margin: 10px 0;
                 font-size: 0.9rem;
             }
-            
+
             .transcript-container {
                 height: 150px;
                 padding: 10px;
             }
-            
+
             p {
                 margin: 10px 0;
                 font-size: 0.9rem;
             }
         }
-        
+
         /* Header styles for better responsiveness */
         header {
             display: flex;
@@ -344,7 +350,7 @@
             border-bottom: 1px solid #333;
             flex-wrap: wrap;
         }
-        
+
         header h1 {
             font-size: 1.5rem;
             margin: 0;
@@ -352,13 +358,13 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         .header-controls {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
+
         nav.main-nav ul {
             display: flex;
             list-style: none;
@@ -366,7 +372,7 @@
             margin: 0;
             padding: 0;
         }
-        
+
         nav.main-nav ul li a {
             padding: 5px 10px;
             color: #fff;
@@ -374,157 +380,157 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-        
+
         nav.main-nav ul li a:hover {
             background-color: #333;
         }
-        
+
         nav.main-nav ul li a.active {
             background-color: #333;
         }
-        
+
         /* Light mode overrides */
         body:not(.dark-mode) {
             background-color: #f5f5f5;
             color: #333;
         }
-        
+
         body:not(.dark-mode) header {
             background-color: #e8e8e8;
             border-bottom: 1px solid #ccc;
         }
-        
+
         body:not(.dark-mode) .status-container {
             background-color: #e0e0e0;
             border: 1px solid #ccc;
         }
-        
+
         body:not(.dark-mode) .controls-row button {
             background-color: #007bff;
             color: white;
             border: 1px solid #0069d9;
         }
-        
+
         body:not(.dark-mode) .controls-row button:hover {
             background-color: #0069d9;
         }
-        
+
         body:not(.dark-mode) .form-group select {
             background-color: #ffffff;
             color: #333;
             border: 1px solid #ccc;
         }
-        
+
         body:not(.dark-mode) .transcript-container {
             background-color: #ffffff;
             border: 1px solid #ccc;
             color: #333;
         }
-        
+
         body:not(.dark-mode) .system-message {
             color: #666;
         }
-        
+
         body:not(.dark-mode) .error-message {
             color: #dc3545;
         }
-        
+
         body:not(.dark-mode) .user-speech {
             color: #007bff;
             border-bottom: 1px solid #eee;
         }
-        
+
         body:not(.dark-mode) .ai-speech {
             color: #28a745;
             border-bottom: 1px solid #eee;
         }
-        
+
         body:not(.dark-mode) .mic-button {
             background-color: #e8e8e8;
             border: 2px solid #007bff;
             color: #007bff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
+
         body:not(.dark-mode) .mic-button:hover {
             background-color: #f0f0f0;
         }
-        
+
         body:not(.dark-mode) .mic-button.listening {
             background-color: #fff0f0;
             border: 2px solid #dc3545;
             color: #dc3545;
             box-shadow: 0 0 10px rgba(220, 53, 69, 0.4);
         }
-        
+
         body:not(.dark-mode) #micStatus {
             color: #333;
         }
-        
+
         body:not(.dark-mode) #micStatus.listening {
             color: #dc3545;
         }
-        
+
         body:not(.dark-mode) #mic-icon.mic-off {
             color: #6c757d;
         }
-        
-        body:not(.dark-mode) #mic-icon.mic-on, 
+
+        body:not(.dark-mode) #mic-icon.mic-on,
         body:not(.dark-mode) #mic-icon.mic-waiting {
             color: #dc3545;
         }
-        
+
         body:not(.dark-mode) nav.main-nav ul li a {
             color: #333;
             background-color: #e0e0e0;
         }
-        
+
         body:not(.dark-mode) nav.main-nav ul li a:hover {
             background-color: #007bff;
             color: white;
         }
-        
+
         body:not(.dark-mode) nav.main-nav ul li a.active {
             background-color: #007bff;
             color: white;
         }
-        
+
         body:not(.dark-mode) .badge-secondary {
             background-color: #6c757d;
             color: white;
         }
-        
+
         body:not(.dark-mode) .badge-success {
             background-color: #28a745;
             color: white;
         }
-        
+
         body:not(.dark-mode) .badge-warning {
             background-color: #ffc107;
             color: #212529;
         }
-        
+
         body:not(.dark-mode) .badge-danger {
             background-color: #dc3545;
             color: white;
         }
-        
+
         body:not(.dark-mode) footer {
             background-color: #e8e8e8;
             color: #333;
             border-top: 1px solid #ccc;
         }
-        
+
         body:not(.dark-mode) footer a {
             color: #007bff;
         }
-        
+
         /* Info Box Styles */
         .info-box-container {
             margin: 15px 0;
             position: relative;
         }
-        
+
         .info-toggle-btn {
             background-color: var(--card-bg);
             color: var(--text-color);
@@ -538,11 +544,11 @@
             text-align: left;
             margin-bottom: 10px;
         }
-        
+
         .info-toggle-btn:hover {
             background-color: var(--hover-bg);
         }
-        
+
         .info-box {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -551,46 +557,46 @@
             margin-top: 5px;
             font-size: 0.9rem;
         }
-        
+
         .info-box h4 {
             margin-top: 0;
             margin-bottom: 10px;
             color: var(--heading-color);
         }
-        
+
         .info-box ul {
             padding-left: 20px;
             margin-bottom: 10px;
         }
-        
+
         .info-box ul ul {
             margin-top: 5px;
         }
-        
+
         .info-box li {
             margin-bottom: 8px;
         }
-        
+
         .info-box p {
             margin-top: 10px;
             margin-bottom: 0;
             font-style: italic;
             color: var(--text-muted);
         }
-        
+
         /* For dark mode */
         html.dark-mode .info-toggle-btn {
             background-color: #2d3748;
         }
-        
+
         html.dark-mode .info-toggle-btn:hover {
             background-color: #3a4a61;
         }
-        
+
         html.dark-mode .info-box {
             background-color: #2d3748;
         }
-        
+
         /* Add styles for the debug panel and its components */
         /* Theme toggle adjustment for WebRTC page */
         .header-controls #theme-toggle {
@@ -598,6 +604,7 @@
         }
     </style>
 </head>
+
 <body class="dark-mode">
     <header>
         <h1>
@@ -606,7 +613,9 @@
         </h1>
         <div class="header-controls">
             <button id="theme-toggle" aria-label="Toggle dark/light mode">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-moon">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
             </button>
@@ -615,31 +624,35 @@
                     <li><a href="/">Dashboard</a></li>
                     <li><a href="/enhanced">Enhanced</a></li>
                     <li><a href="/webrtc_realtime" class="active">Realtime</a></li>
+                    <li><a href="/avatar">3D Avatar</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
+
     <main>
         <div class="container">
             <h2>OpenAI Realtime webRTC</h2>
-            <p>This feature uses OpenAI's Realtime API for continuous voice streaming. Speak naturally with the AI with minimal latency.</p>
-            
+            <p>This feature uses OpenAI's Realtime API for continuous voice streaming. Speak naturally with the AI with
+                minimal latency.</p>
+
             <div class="status-container">
                 <span>Session Status:</span>
                 <span id="session-status" class="badge badge-secondary">Inactive</span>
             </div>
-            
+
             <div class="controls-row">
                 <button id="startBtn" class="btn">Start Session</button>
                 <button id="stopBtn" class="btn" disabled>Stop Session</button>
                 <button id="clearBtn" class="btn">Clear Transcript</button>
                 <button id="testMicBtn" class="btn">Test Microphone</button>
             </div>
-            
+
             <!-- Microphone test result display -->
-            <div id="micTestResult" style="display: none; margin: 10px 0; padding: 8px; border-radius: 4px; background-color: #1a1a1a; text-align: center;"></div>
-            
+            <div id="micTestResult"
+                style="display: none; margin: 10px 0; padding: 8px; border-radius: 4px; background-color: #1a1a1a; text-align: center;">
+            </div>
+
             <div class="character-selection">
                 <div class="form-group">
                     <label for="character-select">Speaking as Character:</label>
@@ -649,7 +662,7 @@
                         {% endfor %}
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="voice-select">Voice:</label>
                     <select id="voice-select" class="form-control" style="width: 300px; max-width: 100%;">
@@ -665,8 +678,9 @@
                 </div>
             </div>
 
-            <p>Press the microphone button and start speaking. The AI will respond naturally as your conversation flows.</p>
-            
+            <p>Press the microphone button and start speaking. The AI will respond naturally as your conversation flows.
+            </p>
+
             <!-- Microphone button -->
             <div class="mic-button-container">
                 <div class="mic-button" id="micBtn">
@@ -674,65 +688,75 @@
                 </div>
                 <p id="micStatus">Click to speak</p>
             </div>
-            
+
             <!-- Voice visualizations -->
             <div class="voice-container" style="margin-bottom: 20px;">
                 <div id="userVoiceVisualization" class="voice-visualization hidden"></div>
                 <div id="aiVoiceVisualization" class="voice-visualization hidden"></div>
             </div>
-            
+
             <!-- Waiting indicator - hidden by default and only shown when needed -->
             <div class="dots hidden" id="waitingIndicator"></div>
-            
+
             <h3>Activity Log</h3>
             <div id="transcript" class="transcript-container" style="height: 200px; text-align: left;"></div>
-            
+
             <!-- Info Box -->
             <div class="info-box-container">
-                <button id="infoToggleBtn" class="info-toggle-btn btn"><i class="fas fa-info-circle"></i> Show Usage Guide</button>
+                <button id="infoToggleBtn" class="info-toggle-btn btn"><i class="fas fa-info-circle"></i> Show Usage
+                    Guide</button>
                 <div id="infoBox" class="info-box" style="display: none;">
                     <h4>How to Use This Page</h4>
                     <ul>
-                        <li><strong>Start a Conversation</strong>: Click the "Start Session" button, the first time you will have to approve microphone access in browser and then "Click to Speak" to begin a voice chat with the AI.</li>
-                        <li><strong>Speaking to the AI</strong>: When the microphone icon pulses red, your voice is being detected and sent to the AI. Pause once the AI is done talking and it will wait till it hears your voice again.</li>
-                        <li><strong>Microphone States</strong>: 
+                        <li><strong>Start a Conversation</strong>: Click the "Start Session" button, the first time you
+                            will have to approve microphone access in browser and then "Click to Speak" to begin a voice
+                            chat with the AI.</li>
+                        <li><strong>Speaking to the AI</strong>: When the microphone icon pulses red, your voice is
+                            being detected and sent to the AI. Pause once the AI is done talking and it will wait till
+                            it hears your voice again.</li>
+                        <li><strong>Microphone States</strong>:
                             <ul>
                                 <li>Gray - Microphone inactive or session not started</li>
                                 <li>Yellow - Waiting for your voice</li>
                                 <li>Pulsing Red - Your voice is being detected</li>
                             </ul>
                         </li>
-                        <li><strong>Toggle Microphone</strong>: Use the microphone button to temporarily disable/enable your microphone.</li>
-                        <li><strong>Change Character</strong>: Select different AI characters from the dropdown menu. Make sure to stop the session select the character and start session.</li>
+                        <li><strong>Toggle Microphone</strong>: Use the microphone button to temporarily disable/enable
+                            your microphone.</li>
+                        <li><strong>Change Character</strong>: Select different AI characters from the dropdown menu.
+                            Make sure to stop the session select the character and start session.</li>
                         <li><strong>Debug Panel</strong>: Access technical details by clicking "Show Debug Panel".</li>
                         <li><strong>End Conversation</strong>: Click red mic and stop session to end the session.</li>
                     </ul>
-                    <p><em>Note: This is a real-time voice conversation - the AI responds as you speak and you can interrupt the AI at any time. If 30mins of inactivity session will end. Setting gpt-4o-realtime-preview-2024-12-17 is recommended for better performance and following the character prompt</em></p>
+                    <p><em>Note: This is a real-time voice conversation - the AI responds as you speak and you can
+                            interrupt the AI at any time. If 30mins of inactivity session will end. Setting
+                            gpt-4o-realtime-preview-2024-12-17 is recommended for better performance and following the
+                            character prompt</em></p>
                 </div>
             </div>
         </div>
     </main>
-    
+
     <footer>
         <p><a href="https://github.com/bigsk1/voice-chat-ai" target="_blank">GitHub Repository</a></p>
     </footer>
-    
+
     <!-- Add at the start of the JavaScript section -->
     <script>
         // Initialize WebRTC configuration with model from server
         const rtcConfig = {
             model: "{{ realtime_model }}"
         };
-        
+
         // Theme toggle functionality
-        document.getElementById('theme-toggle').addEventListener('click', function() {
+        document.getElementById('theme-toggle').addEventListener('click', function () {
             document.documentElement.classList.toggle('dark-mode');
-            
+
             // Store the preference
             const isDarkMode = document.documentElement.classList.contains('dark-mode');
             localStorage.setItem('dark-mode', isDarkMode);
         });
-        
+
         // Initialize theme based on saved preference
         if (localStorage.getItem('dark-mode') === 'false') {
             document.documentElement.classList.remove('dark-mode');
@@ -743,4 +767,5 @@
     <script src="{{ url_for('static', path='js/debug_panel.js') }}"></script>
     <script src="{{ url_for('static', path='js/webrtc_realtime.js') }}"></script>
 </body>
-</html> 
+
+</html>

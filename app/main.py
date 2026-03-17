@@ -50,8 +50,9 @@ display_banner()
 app = FastAPI()
 
 # Mount static files and templates
-app.mount("/app/static", StaticFiles(directory="app/static"), name="static")
-templates = Jinja2Templates(directory="app/templates")
+base_dir = os.path.dirname(os.path.abspath(__file__))
+app.mount("/app/static", StaticFiles(directory=os.path.join(base_dir, "static")), name="static")
+templates = Jinja2Templates(directory=os.path.join(base_dir, "templates"))
 
 app.add_middleware(
     CORSMiddleware,
@@ -555,6 +556,39 @@ async def get_webrtc_realtime(request: Request):
                 "request": request,
                 "characters": ["assistant"],
                 "realtime_model": "gpt-4o-realtime-preview-2024-12-17",  # Default fallback
+            }
+        )
+
+@app.get("/avatar")
+async def get_avatar(request: Request):
+    """
+    Serves the 3D Synthetic Avatar page.
+    """
+    try:
+        # Get characters from characters folder
+        characters = []
+        if os.path.exists(characters_folder):
+            characters = [d for d in os.listdir(characters_folder) 
+                        if os.path.isdir(os.path.join(characters_folder, d))]
+        
+        # Provide a fallback if no characters found
+        if not characters:
+            characters = ["assistant"]
+        
+        return templates.TemplateResponse(
+            "avatar.html", 
+            {
+                "request": request,
+                "characters": characters,
+            }
+        )
+    except Exception as e:
+        logger.error(f"Error rendering Avatar page: {e}")
+        return templates.TemplateResponse(
+            "avatar.html", 
+            {
+                "request": request,
+                "characters": ["assistant"],
             }
         )
 

@@ -13,16 +13,6 @@ try:
 except ImportError:
     torch = None
 
-# New OpenVINO imports for Intel GPU acceleration
-try:
-    import openvino
-    import openvino_genai
-    import librosa
-    from huggingface_hub import snapshot_download
-    OPENVINO_AVAILABLE = True
-except ImportError:
-    OPENVINO_AVAILABLE = False
-
 # ANSI escape codes for colors
 PINK = '\033[95m'
 CYAN = '\033[96m'
@@ -45,90 +35,45 @@ FASTER_WHISPER_LOCAL = os.getenv("FASTER_WHISPER_LOCAL", "true").lower() == "tru
 # Initialize whisper model as None to lazy load
 whisper_model = None
 
-def download_openvino_whisper_model(model_id="OpenVINO/whisper-tiny.en-int8-ov"):
-    """Downloads a pre-converted OpenVINO Whisper model from Hugging Face."""
-    model_path = os.path.join(os.path.expanduser("~"), ".cache", "openvino_models", model_id.replace("/", "--"))
-    if not os.path.exists(model_path):
-        print(f"Downloading OpenVINO Whisper model: {model_id}...")
-        try:
-            snapshot_download(repo_id=model_id, local_dir=model_path, local_dir_use_symlinks=False)
-            print("Model downloaded successfully.")
-        except Exception as e:
-            print(f"Error downloading OpenVINO model: {e}")
-            return None
-    return model_path
-
 def initialize_whisper_model():
-    """Initialize the Whisper model - supporting CUDA, OpenVINO GPU, and CPU"""
+    """Initialize the Faster Whisper model - only called when needed"""
     global whisper_model
     
     if whisper_model is not None:
         return whisper_model
         
-    # 1. Try CUDA (NVIDIA GPU)
-    if torch and torch.cuda.is_available():
-        device = "cuda"
-        model_size = "medium.en"
-        try:
-            print(f"Attempting to load Faster-Whisper on {device}...")
-            whisper_model = WhisperModel(model_size, device=device, compute_type="float16")
-            print("Faster-Whisper initialized successfully on CUDA.")
-            return whisper_model
-        except Exception as e:
-            print(f"Error initializing Faster-Whisper on {device}: {e}")
-
-    # 2. Try OpenVINO (Intel GPU/CPU)
-    if OPENVINO_AVAILABLE:
-        try:
-            core = openvino.Core()
-            ov_devices = core.available_devices
-            ov_device = "GPU" if "GPU" in ov_devices else "CPU"
-            
-            print(f"Attempting to load OpenVINO Whisper on {ov_device}...")
-            model_path = download_openvino_whisper_model()
-            if model_path:
-                # Store as a dict with its type so transcription knows how to call it
-                ov_pipe = openvino_genai.WhisperPipeline(model_path, ov_device)
-                whisper_model = {"type": "openvino", "pipe": ov_pipe}
-                print(f"OpenVINO Whisper initialized successfully on {ov_device}.")
-                return whisper_model
-        except Exception as e:
-            print(f"Error initializing OpenVINO Whisper: {e}")
-
-    # 3. Fallback to CPU Faster-Whisper
-    print("Falling back to CPU Faster-Whisper...")
-    model_size = "tiny.en"
+    # Check for CUDA availability (only if torch is available)
+    device = "cuda" if (torch and torch.cuda.is_available()) else "cpu"
+    
+    # Default model size (adjust as needed)
+    model_size = "medium.en"
+    
     try:
+        print(f"Attempting to load Faster-Whisper on {device}...")
+        whisper_model = WhisperModel(model_size, device=device, compute_type="float16" if device == "cuda" else "int8")
+        print("Faster-Whisper initialized successfully.")
+    except Exception as e:
+        print(f"Error initializing Faster-Whisper on {device}: {e}")
+        print("Falling back to CPU mode...")
+
+        # Force CPU fallback
+        device = "cpu"
+        model_size = "tiny.en"  # Use a smaller model for CPU performance
         whisper_model = WhisperModel(model_size, device="cpu", compute_type="int8")
         print("Faster-Whisper initialized on CPU successfully.")
-    except Exception as e:
-        print(f"Final fallback error: {e}")
         
     return whisper_model
 
 def transcribe_with_whisper(audio_file):
-    """Transcribe audio using the initialized Whisper model (Faster or OpenVINO)"""
+    """Transcribe audio using local Faster Whisper model"""
+    # Lazy load the model only when needed
     model = initialize_whisper_model()
     
-    if isinstance(model, dict) and model.get("type") == "openvino":
-        # Handle OpenVINO GenAI transcription
-        audio_data, _ = librosa.load(audio_file, sr=16000)
-        raw_speech = audio_data.tolist()
-        result = model["pipe"].generate(
-            raw_speech,
-            max_new_tokens=448,
-            language="<|en|>",
-            task="transcribe"
-        )
-        # Handle case where result is a string or an object with __str__
-        return str(result).strip()
-    else:
-        # Handle standard Faster Whisper transcription
-        segments, info = model.transcribe(audio_file, beam_size=5)
-        transcription = ""
-        for segment in segments:
-            transcription += segment.text + " "
-        return transcription.strip()
+    segments, info = model.transcribe(audio_file, beam_size=5)
+    transcription = ""
+    for segment in segments:
+        transcription += segment.text + " "
+    return transcription.strip()
 
 async def transcribe_with_openai_api(audio_file, model="gpt-4o-mini-transcribe"):
     """Transcribe audio using OpenAI's API"""

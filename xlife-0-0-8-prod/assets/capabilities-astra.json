@@ -1,0 +1,100 @@
+{
+  "version": "1.0",
+  "printer": {
+    "supported_content_type": [
+      {
+        "content_type": "application/pdf",
+        "min_version": "1.5",
+        "max_version": "1.5"
+      }
+    ],
+    "copies": {
+      "default": 1,
+      "max": 100
+    },
+    "color": {
+      "option": [
+        {
+          "type": "STANDARD_MONOCHROME",
+          "is_default": true
+        }
+      ]
+    },
+    "collate": {
+      "default": true
+    },
+    "page_orientation": {
+      "option": [
+        {
+          "type": "PORTRAIT",
+          "is_default": true
+        },
+        {
+          "type": "LANDSCAPE"
+        }
+      ]
+    },
+    "margins": {
+      "option": [
+        {
+          "type": "BORDERLESS",
+          "top": 0,
+          "left": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "type": "STANDARD",
+          "is_default": true
+        },
+        {
+          "type": "CUSTOM"
+        }
+      ]
+    },
+    "dpi": {
+      "option": [
+        {
+          "horizontal_dpi": 203,
+          "vertical_dpi": 203,
+          "is_default": true
+        },
+        {
+          "horizontal_dpi": 300,
+          "vertical_dpi": 300
+        }
+      ]
+    },
+
+    "media_size": {
+      "option": []
+    },
+
+    "media_size_standard": {
+      "option": [
+        {
+          "custom_display_name": "A4(210.0 mm x 297.0 mm)",
+          "width_microns": 210000,
+          "height_microns": 297000,
+          "is_default": true
+        }
+      ]
+    },
+    "media_size_tattoo": {
+      "option": [
+        {
+          "custom_display_name": "Letter(216.0 mm x 279.0 mm)",
+          "width_microns": 210000,
+          "height_microns": 257000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "A4(210.0 mm x 297.0 mm)",
+          "width_microns": 200000,
+          "height_microns": 275000,
+          "is_default": true
+        }
+      ]
+    }
+  }
+}

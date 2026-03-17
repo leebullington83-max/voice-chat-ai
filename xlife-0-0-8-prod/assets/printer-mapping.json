@@ -1,0 +1,449 @@
+[
+  {
+    "companyModel": "D82",
+    "usbName": "",
+    "bleName": "",
+    "model": "D82",
+    "dpi": 300,
+    "type": 0,
+    "media_size": {
+      "option": [
+        {
+          "custom_display_name": "A5(148.0 mm x 210.0 mm)",
+          "width_microns": 148000,
+          "height_microns": 210000,
+          "is_default": false
+        }
+      ]
+    },
+    "other_options": {
+      "image_options": {
+        "brightness": 10,
+        "contrast": 0,
+        "sharp_radius": 1.8,
+        "sharp_amount": 4.5,
+        "sharp_threshold": 0.5
+      },
+      "flipX": false
+    }
+  },
+
+  {
+    "companyModel": "P82",
+    "usbName": "",
+    "bleName": "",
+    "model": "P82",
+    "dpi": 300,
+    "type": 0,
+    "media_size": {
+      "option": [
+        {
+          "custom_display_name": "Letter(216.0 mm x 279.0 mm)",
+          "width_microns": 216000,
+          "height_microns": 279000,
+          "is_default": false
+        }
+      ]
+    },
+    "other_options": {
+      "image_options": {
+        "brightness": 10,
+        "contrast": 0,
+        "sharp_radius": 1.8,
+        "sharp_amount": 4.5,
+        "sharp_threshold": 0.5
+      },
+      "flipX": false
+    }
+  },
+
+  {
+    "companyModel": "A81",
+    "usbName": "",
+    "bleName": "",
+    "model": "A81",
+    "dpi": 300,
+    "type": 0,
+    "media_size": {
+      "option": [
+        {
+          "custom_display_name": "Letter(216.0 mm x 279.0 mm)",
+          "width_microns": 216000,
+          "height_microns": 279000,
+          "is_default": false
+        }
+      ]
+    },
+    "other_options": {
+      "image_options": {
+        "brightness": 10,
+        "contrast": 0,
+        "sharp_radius": 1.8,
+        "sharp_amount": 4.5,
+        "sharp_threshold": 0.5
+      },
+      "flipX": false
+    }
+  },
+
+  {
+    "companyModel": "P83",
+    "usbName": "",
+    "bleName": "",
+    "model": "P83",
+    "dpi": 300,
+    "type": 0,
+    "media_size": {
+      "option": [
+        {
+          "custom_display_name": "Letter(216.0 mm x 279.0 mm)",
+          "width_microns": 216000,
+          "height_microns": 279000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "A5(148.0 mm x 210.0 mm)",
+          "width_microns": 148000,
+          "height_microns": 210000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "B5(176.0 mm x 250.0 mm)",
+          "width_microns": 176000,
+          "height_microns": 250000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "A4 BlackMark(210.0 mm x 295.0 mm)",
+          "width_microns": 210000,
+          "height_microns": 295000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "2 in(53.0 mm x 297.0 mm)",
+          "width_microns": 53000,
+          "height_microns": 297000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "3 in(80.0 mm x 297.0 mm)",
+          "width_microns": 80000,
+          "height_microns": 297000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "4 in(110.0 mm x 297.0 mm)",
+          "width_microns": 110000,
+          "height_microns": 297000,
+          "is_default": false
+        }
+      ]
+    },
+    "other_options": {
+      "image_options": {
+        "brightness": 10,
+        "contrast": 0,
+        "sharp_radius": 1.8,
+        "sharp_amount": 4.5,
+        "sharp_threshold": 0.5
+      },
+      "flipX": false
+    }
+  },
+
+  {
+    "companyModel": "P800",
+    "usbName": "",
+    "bleName": "",
+    "model": "P800",
+    "dpi": 300,
+    "type": 0,
+    "media_size": {
+      "option": [
+        {
+          "custom_display_name": "Letter(216.0 mm x 279.0 mm)",
+          "width_microns": 216000,
+          "height_microns": 279000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "A5(148.0 mm x 210.0 mm)",
+          "width_microns": 148000,
+          "height_microns": 210000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "B5(176.0 mm x 250.0 mm)",
+          "width_microns": 176000,
+          "height_microns": 250000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "A4 BlackMark(210.0 mm x 295.0 mm)",
+          "width_microns": 210000,
+          "height_microns": 295000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "2 in(53.0 mm x 297.0 mm)",
+          "width_microns": 53000,
+          "height_microns": 297000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "3 in(80.0 mm x 297.0 mm)",
+          "width_microns": 80000,
+          "height_microns": 297000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "4 in(110.0 mm x 297.0 mm)",
+          "width_microns": 110000,
+          "height_microns": 297000,
+          "is_default": false
+        }
+      ]
+    },
+    "other_options": {
+      "image_options": {
+        "brightness": 10,
+        "contrast": 0,
+        "sharp_radius": 1.8,
+        "sharp_amount": 4.5,
+        "sharp_threshold": 0.5
+      },
+      "flipX": false
+    }
+  },
+
+  {
+    "companyModel": "PB821",
+    "usbName": "",
+    "bleName": "",
+    "model": "PB821",
+    "dpi": 203,
+    "type": 0,
+    "media_size": {
+      "option": [
+        {
+          "custom_display_name": "Letter(216.0 mm x 279.0 mm)",
+          "width_microns": 216000,
+          "height_microns": 279000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "A5(148.0 mm x 210.0 mm)",
+          "width_microns": 148000,
+          "height_microns": 210000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "B5(176.0 mm x 250.0 mm)",
+          "width_microns": 176000,
+          "height_microns": 250000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "A4 BlackMark(210.0 mm x 295.0 mm)",
+          "width_microns": 210000,
+          "height_microns": 295000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "2 in(53.0 mm x 297.0 mm)",
+          "width_microns": 53000,
+          "height_microns": 297000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "3 in(80.0 mm x 297.0 mm)",
+          "width_microns": 80000,
+          "height_microns": 297000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "4 in(110.0 mm x 297.0 mm)",
+          "width_microns": 110000,
+          "height_microns": 297000,
+          "is_default": false
+        }
+      ]
+    },
+    "other_options": {
+      "image_options": {
+        "brightness": 10,
+        "contrast": 0,
+        "sharp_radius": 1.8,
+        "sharp_amount": 4.5,
+        "sharp_threshold": 0.5
+      },
+      "flipX": false
+    }
+  },
+
+  {
+    "companyModel": "P83C",
+    "usbName": "",
+    "bleName": "",
+    "model": "P83C",
+    "dpi": 203,
+    "type": 0,
+    "media_size": {
+      "option": [
+        {
+          "custom_display_name": "Letter(216.0 mm x 279.0 mm)",
+          "width_microns": 216000,
+          "height_microns": 279000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "A5(148.0 mm x 210.0 mm)",
+          "width_microns": 148000,
+          "height_microns": 210000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "B5(176.0 mm x 250.0 mm)",
+          "width_microns": 176000,
+          "height_microns": 250000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "A4 BlackMark(210.0 mm x 295.0 mm)",
+          "width_microns": 210000,
+          "height_microns": 295000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "2 in(53.0 mm x 297.0 mm)",
+          "width_microns": 53000,
+          "height_microns": 297000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "3 in(80.0 mm x 297.0 mm)",
+          "width_microns": 80000,
+          "height_microns": 297000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "4 in(110.0 mm x 297.0 mm)",
+          "width_microns": 110000,
+          "height_microns": 297000,
+          "is_default": false
+        }
+      ]
+    },
+    "other_options": {
+      "image_options": {
+        "brightness": 10,
+        "contrast": 0,
+        "sharp_radius": 1.8,
+        "sharp_amount": 4.5,
+        "sharp_threshold": 0.5
+      },
+      "flipX": false
+    }
+  },
+
+  {
+    "companyModel": "P84",
+    "usbName": "",
+    "bleName": "",
+    "model": "P84",
+    "dpi": 203,
+    "type": 1,
+    "media_size": {
+      "option": []
+    },
+    "other_options": {
+      "image_options": {
+        "brightness": 10,
+        "contrast": 0,
+        "sharp_radius": 1.8,
+        "sharp_amount": 4.5,
+        "sharp_threshold": 0.5
+      },
+      "flipX": true
+    }
+  },
+
+  {
+    "companyModel": "S008",
+    "usbName": "",
+    "bleName": "",
+    "model": "S008",
+    "dpi": 203,
+    "type": 1,
+    "media_size": {
+      "option": []
+    },
+    "other_options": {
+      "image_options": {
+        "brightness": 10,
+        "contrast": 0,
+        "sharp_radius": 1.8,
+        "sharp_amount": 4.5,
+        "sharp_threshold": 0.5
+      },
+      "flipX": true
+    }
+  },
+
+  {
+    "companyModel": "H1",
+    "usbName": "",
+    "bleName": "",
+    "model": "H1",
+    "dpi": 203,
+    "type": 1,
+    "media_size": {
+      "option": []
+    },
+    "other_options": {
+      "image_options": {
+        "brightness": 10,
+        "contrast": 0,
+        "sharp_radius": 1.8,
+        "sharp_amount": 4.5,
+        "sharp_threshold": 0.5
+      },
+      "flipX": true
+    }
+  },
+
+  {
+    "companyModel": "X8",
+    "usbName": "",
+    "bleName": "",
+    "model": "X8",
+    "dpi": 203,
+    "type": 1,
+    "media_size": {
+      "option": [
+        {
+          "custom_display_name": "Tattoo A5(210.0 mm x 140.0 mm)",
+          "width_microns": 200000,
+          "height_microns": 118000,
+          "is_default": false
+        },
+        {
+          "custom_display_name": "Tattoo A6(105.0 mm x 140.0 mm)",
+          "width_microns": 100000,
+          "height_microns": 118000,
+          "is_default": false
+        }
+      ]
+    },
+    "other_options": {
+      "image_options": {
+        "brightness": 3,
+        "contrast": -20,
+        "sharp_radius": 1,
+        "sharp_amount": 15,
+        "sharp_threshold": 1
+      },
+      "flipX": false
+    }
+  }
+]
